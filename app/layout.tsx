@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
-import Header from './components/Header'
-import Sidebar from './components/Sidebar'
+import Header from './components/Header/Header'
+import MainSidebar from './components/Header/MainSidebar'
+import AdminModel from './components/Admin/AdminModel'
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,12 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='min-h-[100svh] flex'>
-          <Sidebar/>
-          <div className='flex-1 flex flex-col overflow-hidden'>
-            <Header/>
+      <body className='min-h-[100svh] flex flex-col overflow-x-hidden md:overflow-x-auto'>
+          <Header/>
+          <div className='flex flex-1'>
+            <MainSidebar/>
             {children}
           </div>
+          <AdminModel/>
       </body>
     </html>
   )

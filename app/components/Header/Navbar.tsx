@@ -6,8 +6,8 @@ import Link from 'next/link'
 const Navbar = () => {
     const pathname = usePathname()
     return (
-        <nav>
-            <ul className='flex max-w-full overflow-x-auto mt-4 gap-4 ml-1 pr-6'>
+        <nav className='overflow-hidden'>
+            <ul className='flex max-w-[100vw] overflow-x-auto mt-4 gap-4 pl-1 pr-6'>
                 <li className={`flex-shrink-0 pb-1 px-1 relative `}>
                     <Link href={'/'}>Deployments</Link>
                     <div className={`absolute bottom-0 border-b-2 translate-x-[-50%] left-[50%] border-black ${pathname === '/' ? 'w-full duration-500' : 'w-0 duration-150'}`}></div>
