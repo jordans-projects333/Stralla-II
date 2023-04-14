@@ -3,7 +3,7 @@ import ExampleImage from '@/Images/ImageManagerExample.jpg'
 
 const page = () => {
   return (
-    <div className='flex-1 bg-slate-100 flex flex-col md:flex-row'>
+    <div className='h-full flex-[9] bg-slate-100 flex flex-col md:flex-row'>
         {/* <h3 className='ml-2 text-gray-700 text-sm mt-1'>Transform, Optimize, Next.js ready</h3> */}
         <div className='md:w-[30%] md:h-full'>
             <div className='relative w-[80%] md:w-[50%] aspect-[3/4] object-cover mx-auto mt-4'>
