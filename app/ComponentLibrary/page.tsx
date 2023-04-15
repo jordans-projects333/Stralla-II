@@ -6,7 +6,7 @@ import CustomAuthImage from '@/Images/customAuth.jpg'
 
 const page = () => {
   return (
-    <main className='flex-1 flex flex-col pt-12 pb-4 gap-2 pl-2 md:flex-row'>
+    <main className='flex-1 flex flex-col pt-12 pb-4 gap-2 pl-2 md:flex-row overflow-y-auto'>
 
       <div className='h-full flex justify-center items-center'>
         <div className='w-[100%] aspect-[2/1] flex relative overflow-hidden'>

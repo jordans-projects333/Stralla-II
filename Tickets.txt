@@ -1,0 +1,13 @@
+Day 1
+
+Make header sticky
+make main side bar fixed/icons
+fix background model on mobile
+functional password login
+presentable on Pc
+shadow on header?
+
+Day 2
+Font page
+font styles around
+CRUD components librarynpm
