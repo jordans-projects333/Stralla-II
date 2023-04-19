@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Component {
+  id                Int              @id @default(autoincrement())
+  title             String           @unique
+  description       String?
+  ComponentFolderid Int?
+  content           String?
+  ComponentFolder   ComponentFolder? @relation(fields: [ComponentFolderid], references: [id])
+}
+
+model ComponentFolder {
+  id                Int               @id @default(autoincrement())
+  title             String            @unique
+  Component         Component[]
+  ComponentFolder_A ComponentFolder[] @relation("ComponentFolder")
+  ComponentFolder_B ComponentFolder[] @relation("ComponentFolder")
+}
+
+model Note {
+  id           Int         @id @default(autoincrement())
+  title        String      @unique
+  description  String?
+  content      String?
+  noteFolderId Int?
+  NoteFolder   NoteFolder? @relation(fields: [noteFolderId], references: [id])
+}
+
+model NoteFolder {
+  id           Int          @id @default(autoincrement())
+  title        String       @unique
+  Note         Note[]
+  NoteFolder_A NoteFolder[] @relation("NoteFolder")
+  NoteFolder_B NoteFolder[] @relation("NoteFolder")
+}
+
+model Svg {
+  id    Int    @id @default(autoincrement())
+  title String
+  code  String
+}
+
+model ComponentCategory {
+  id            Int                    @id @default(autoincrement())
+  name          String
+  subCategories ComponentSubCategory[]
+}
+
+model ComponentSubCategory {
+  id                  Int                @id @default(autoincrement())
+  name                String
+  imageUrl            String
+  components          Components[]
+  ComponentCategory   ComponentCategory? @relation(fields: [componentCategoryId], references: [id])
+  componentCategoryId Int?
+}
+
+model Components {
+  id                     Int                   @id @default(autoincrement())
+  name                   String
+  description            String
+  code                   Code[]
+  ComponentCategory      ComponentSubCategory? @relation(fields: [componentSubCategoryId], references: [id])
+  componentSubCategoryId Int?
+}
+
+model Code {
+  id           Int         @id @default(autoincrement())
+  code         String
+  imageUrl     String
+  note         String
+  Components   Components? @relation(fields: [componentsId], references: [id])
+  componentsId Int?
+}

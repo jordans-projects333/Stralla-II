@@ -7,7 +7,7 @@ const Navbar = () => {
     const pathname = usePathname()
     return (
         <nav className='overflow-hidden'>
-            <ul className='flex max-w-[100vw] overflow-x-auto mt-4 gap-4 pl-1 pr-6'>
+            <ul className='flex max-w-[100vw] overflow-x-auto mt-4 gap-4 md:gap-16 pl-1 pr-6 font-semibold'>
                 <li className={`flex-shrink-0 pb-1 px-1 relative `}>
                     <Link href={'/'}>Deployments</Link>
                     <div className={`absolute bottom-0 border-b-2 translate-x-[-50%] left-[50%] border-black ${pathname === '/' ? 'w-full duration-500' : 'w-0 duration-150'}`}></div>
@@ -22,7 +22,7 @@ const Navbar = () => {
                 </li>
                 <li className={`flex-shrink-0 pb-1 px-1 relative `}>
                     <Link href={'/ComponentLibrary'}>Components</Link>
-                    <div className={`absolute bottom-0 duration-500 border-b-2 translate-x-[-50%] left-[50%] border-black ${pathname === '/ComponentLibrary' ? 'w-full duration-500' : 'w-0 duration-150'}`}></div>
+                    <div className={`absolute bottom-0 duration-500 border-b-2 translate-x-[-50%] left-[50%] border-black ${pathname?.indexOf('/ComponentLibrary') === 0 ? 'w-full duration-500' : 'w-0 duration-150'}`}></div>
                 </li>
                 <li className={`flex-shrink-0 pb-1 px-1 relative `}>
                     <Link href={'/FontLibrary'}>Fonts</Link>

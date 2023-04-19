@@ -1,13 +1,10 @@
-Day 1
+optimize front end image
+validation front and back end
+add image to cloudinary recieve url
+add url and name to database
+add all categories
+find out how to add to form
+validation
+add and display components
 
-Make header sticky
-make main side bar fixed/icons
-fix background model on mobile
-functional password login
-presentable on Pc
-shadow on header?
-
-Day 2
-Font page
-font styles around
-CRUD components librarynpm
+forced to add emoji before message, emoji first then reveal message. can toggle off
