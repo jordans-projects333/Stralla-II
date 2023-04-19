@@ -4,7 +4,7 @@ import { useState } from 'react'
 import AddComponentButton from './Components/AddComponentButton'
 import AddComponentForm from './Components/AddComponentForm'
 
-const page = () => {
+const Page = () => {
   const [addingComponent, setAddingComponent] = useState(false)
   return (
     <div className='flex flex-1'>
@@ -24,4 +24,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
